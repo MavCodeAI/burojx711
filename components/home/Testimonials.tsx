@@ -1,10 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   const testimonials = [
     {
@@ -81,6 +82,26 @@ const Testimonials = () => {
     }
   ];
 
+  // Auto-slide functionality
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => 
+        prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000); // Change every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [isPaused, testimonials.length]);
+
+  const handleDotClick = (index: number) => {
+    setActiveIndex(index);
+    setIsPaused(true); // Pause auto-slide when user clicks
+    // Resume auto-slide after 10 seconds
+    setTimeout(() => setIsPaused(false), 10000);
+  };
+
   return (
     <section className="relative py-24 md:py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -110,7 +131,9 @@ const Testimonials = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="glass-effect rounded-3xl p-8 md:p-12 border border-white/10 mb-8"
+          className="glass-effect rounded-3xl p-8 md:p-12 border border-white/10 mb-8 cursor-pointer"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
         >
           <div className="flex flex-col lg:flex-row gap-8 items-start">
             {/* Avatar & Info */}
@@ -154,7 +177,7 @@ const Testimonials = () => {
           {testimonials.map((_, index) => (
             <button
               key={index}
-              onClick={() => setActiveIndex(index)}
+              onClick={() => handleDotClick(index)}
               className={`transition-all ${
                 index === activeIndex
                   ? 'w-12 h-3 bg-gradient-to-r from-white to-gray-400'
