@@ -48,10 +48,10 @@ const Header = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.4, ease: 'easeOut' }}
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 ${
           scrolled
-            ? 'bg-black/80 backdrop-blur-xl border-b border-white/5'
-            : 'bg-transparent'
+            ? 'bg-black/90 backdrop-blur-xl border-b border-white/5 shadow-lg'
+            : 'bg-black/20 backdrop-blur-sm'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -123,7 +123,7 @@ const Header = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 md:hidden"
+            className="fixed inset-0 z-[90] md:hidden"
           >
             {/* Backdrop */}
             <motion.div
