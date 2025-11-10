@@ -103,8 +103,8 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="relative py-16 md:py-24 lg:py-32 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -131,14 +131,14 @@ const Testimonials = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="glass-effect rounded-3xl p-8 md:p-12 border border-white/10 mb-8 cursor-pointer"
+          className="glass-effect rounded-2xl p-6 sm:p-8 md:p-12 border border-white/10 mb-6 sm:mb-8 cursor-pointer"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
           <div className="flex flex-col lg:flex-row gap-8 items-start">
             {/* Avatar & Info */}
             <div className="flex items-start gap-4 lg:flex-col lg:items-center lg:text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-white to-gray-400 rounded-2xl flex items-center justify-center flex-shrink-0">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-white to-gray-400 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
                 <span className="text-black text-2xl font-bold">{testimonials[activeIndex].image}</span>
               </div>
               <div className="lg:mt-4">
@@ -161,7 +161,7 @@ const Testimonials = () => {
                 <svg className="w-12 h-12 text-white/10 mb-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
-                <p className="text-xl md:text-2xl text-white leading-relaxed mb-6">
+                <p className="text-lg sm:text-xl md:text-2xl text-white leading-relaxed mb-6">
                   {testimonials[activeIndex].content}
                 </p>
                 <div className="inline-flex items-center gap-2 px-4 py-2 glass-effect-light rounded-lg border border-white/10">

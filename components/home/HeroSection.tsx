@@ -21,11 +21,11 @@ const HeroSection = () => {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20"
     >
       <motion.div
         style={{ y, opacity }}
-        className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center"
+        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
       >
         {/* Ultra-premium hero content */}
 

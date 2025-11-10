@@ -39,8 +39,8 @@ const FeaturedProjects = () => {
   ];
 
   return (
-    <section id="projects-section" className="relative py-24 md:py-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="projects-section" className="relative py-16 md:py-24 lg:py-32 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Premium header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -72,7 +72,7 @@ const FeaturedProjects = () => {
               viewport={{ once: true }}
               className="group"
             >
-              <div className="glass-effect rounded-2xl md:rounded-3xl p-6 md:p-10 border border-white/5 hover:border-white/10 transition-all hover:scale-[1.01]">
+              <div className="glass-effect rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-10 border border-white/5 hover:border-white/10 transition-all hover:scale-[1.01]">
                 <div className="flex flex-col lg:flex-row gap-8">
                   {/* Content */}
                   <div className="flex-1 space-y-6">
@@ -132,7 +132,7 @@ const FeaturedProjects = () => {
                   </div>
 
                   {/* Project visual */}
-                  <div className="w-full lg:w-80 h-56 sm:h-64 lg:h-96 rounded-xl border border-white/10 overflow-hidden group-hover:border-white/20 transition-colors relative bg-white/5">
+                  <div className="w-full lg:w-80 h-48 sm:h-56 lg:h-96 rounded-xl border border-white/10 overflow-hidden group-hover:border-white/20 transition-colors relative bg-white/5">
                     {project.image ? (
                       <Image
                         src={project.image}

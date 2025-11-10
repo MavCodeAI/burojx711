@@ -55,7 +55,7 @@ const Footer = () => {
 
   return (
     <footer className="relative border-t border-white/10 bg-gradient-to-b from-black to-black/95">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 md:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
         {/* Newsletter Section */}
         <div className="mb-16 md:mb-20">
           <Newsletter />

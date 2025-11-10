@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 
 const IntroSection = () => {
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-b from-black via-black/95 to-black">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="relative py-16 md:py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-black via-black/95 to-black">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Premium heading with badge */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
