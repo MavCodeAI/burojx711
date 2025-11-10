@@ -103,13 +103,13 @@ const Header = () => {
               </Link>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - Enhanced */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden relative z-50 p-2 text-white active:scale-95 transition-transform"
+              className="md:hidden relative z-[110] p-3 text-white active:scale-95 transition-all hover:bg-white/10 rounded-lg"
               aria-label="Toggle menu"
             >
-              {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+              {mobileMenuOpen ? <X size={32} className="stroke-[2.5]" /> : <Menu size={32} className="stroke-[2.5]" />}
             </button>
           </div>
         </div>
@@ -123,7 +123,7 @@ const Header = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[90] md:hidden"
+            className="fixed inset-0 z-[95] md:hidden"
           >
             {/* Backdrop */}
             <motion.div
@@ -139,21 +139,21 @@ const Header = () => {
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
-              transition={{ duration: 0.3, ease: 'easeOut' }}
-              className="absolute right-0 top-0 h-full w-full sm:w-80 bg-black/90 backdrop-blur-xl border-l border-white/10"
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="absolute right-0 top-0 h-full w-full sm:w-80 bg-black/95 backdrop-blur-xl border-l border-white/10 shadow-2xl"
             >
-              <div className="flex flex-col h-full pt-32 px-8">
-                <nav className="flex flex-col gap-8">
+              <div className="flex flex-col h-full pt-24 px-8 overflow-y-auto">
+                <nav className="flex flex-col gap-6">
                   {navItems.map((item, index) => (
                     <Link key={item.path} href={item.path} onClick={handleNavClick}>
                       <motion.div
                         initial={{ opacity: 0, x: 30 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.05, duration: 0.3 }}
-                        className="relative group"
+                        className="relative group py-2"
                       >
                         <span
-                          className={`text-3xl font-bold transition-colors ${
+                          className={`text-2xl sm:text-3xl font-bold transition-colors ${
                             pathname === item.path
                               ? 'text-gradient'
                               : 'text-gray-400 hover:text-white'
